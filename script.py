@@ -17,6 +17,10 @@ def grafify(image):
     return(grayscale_image)
 
 # convert pixels to a string of ASCII characters
+def pixels_to_ascii(image):
+    pixels = image.getdata()
+    characters = "".join([ASCII_CHARS[pixels//25] for pixel in pixels])
+    return (characters)
 
 def main():
     path=input("Enter a valid pathname to an image:\n")
